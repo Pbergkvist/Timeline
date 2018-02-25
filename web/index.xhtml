@@ -5,16 +5,220 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-   <!--<f:view>-->
-      <!--<h:outputLabel value="Hello, world"/>-->
-   <!--</f:view>-->
-   <h:head>
-      <!--<h:outputScript library="js" name="modernizr.js"/>-->
-      <h:outputStylesheet name="css/reset.css"/>
-      <h:outputStylesheet name="css/style.css"/>
-      <!--<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Fira+Sans:400,400italic' rel='stylesheet' type='text/css'/>-->
-   </h:head>
 
+<h:head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"/>
+    <h:outputScript library="js" name="jquery.js"/>
+    <h:outputStylesheet library="css" name="thestyle.css"/>
+</h:head>
 
+<h:body>
+
+    <h:panelGroup class="timeline-wrapper clearfix" layout="block">
+        <h:panelGroup class="timeline-content-day" layout="block">
+            <h:panelGroup class="timeline-line" layout="block"></h:panelGroup>
+            <h:panelGroup class="timeline-content-item active" layout="block">
+                <span>8 AM</span>
+                <h:panelGroup class="timeline-content-item-reveal" layout="block">
+                    <h:link class="link" outcome = "#">
+                        <h:graphicImage class="bild" value="http://lorempixel.com/300/300/abstract"/>
+                        <h:panelGroup>Lorem Ipsum</h:panelGroup>
+                    </h:link>
+                </h:panelGroup>
+            </h:panelGroup>
+
+            <h:panelGroup class="timeline-content-item" layout="block">
+                <span>8 AM</span>
+                <h:panelGroup class="timeline-content-item-reveal" layout="block">
+                    <h:link class="link" outcome = "#">
+                        <h:graphicImage class="bild" value="http://lorempixel.com/300/300/city"/>
+                        <h:panelGroup>Lorem Ipsum</h:panelGroup>
+                    </h:link>
+                </h:panelGroup>
+            </h:panelGroup>
+
+        </h:panelGroup>
+    </h:panelGroup>
+
+    <!--<h:outputScript value="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"/>-->
+    <!--<script type="javascript" src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>-->
+    <!--<script type="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+
+    <h:outputScript library="js" name="index.js"/>
+
+</h:body>
 
 </html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en"-->
+      <!--xmlns:f="http://xmlns.jcp.org/jsf/core"-->
+      <!--xmlns:h="http://xmlns.jcp.org/jsf/html">-->
+<!--<h:head>-->
+    <!--<title>Title</title>-->
+    <!--&lt;!&ndash;<h:outputScript library="js" name="modernizr.js"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;<h:outputStylesheet library="css" name="reset.css"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;<h:outputStylesheet library="css" name="style.css"/>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<h:outputScript library="js" name="main.js"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;<h:outputScript library="js" name="jquery-2.1.4.js"/>&ndash;&gt;-->
+
+    <!--<h:outputStylesheet library="css" name="testing.css"/>-->
+<!--</h:head>-->
+
+<!--<h:body>-->
+
+    <!--<section class="test">-->
+
+        <!--<h1>Hello</h1>-->
+
+        <!--<p id="p-test">Hello world</p>-->
+
+    <!--</section>-->
+
+    <!--&lt;!&ndash;<section class="cd-horizontal-timeline">&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="timeline">&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="events-wrapper">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="events">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<ol>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li><a href="#0" data-date="16/01/2014" class="selected">16 Jan</a></li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li><a href="#0" data-date="28/02/2014">28 Feb</a></li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li><a href="#0" data-date="20/04/2014">20 Mar</a></li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li><a href="#0" data-date="20/05/2014">20 May</a></li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li><a href="#0" data-date="09/07/2014">09 Jul</a></li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li><a href="#0" data-date="30/08/2014">30 Aug</a></li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li><a href="#0" data-date="15/09/2014">15 Sep</a></li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li><a href="#0" data-date="01/11/2014">01 Nov</a></li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li><a href="#0" data-date="10/12/2014">10 Dec</a></li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li><a href="#0" data-date="19/01/2015">29 Jan</a></li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li><a href="#0" data-date="03/03/2015">3 Mar</a></li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</ol>&ndash;&gt;-->
+
+                    <!--&lt;!&ndash;<span class="filling-line" aria-hidden="true"></span>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+            <!--&lt;!&ndash;<ul class="cd-timeline-navigation">&ndash;&gt;-->
+                <!--&lt;!&ndash;<li><a href="#0" class="prev inactive">Prev</a></li>&ndash;&gt;-->
+                <!--&lt;!&ndash;<li><a href="#0" class="next">Next</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<div class="events-content">&ndash;&gt;-->
+            <!--&lt;!&ndash;<ol>&ndash;&gt;-->
+                <!--&lt;!&ndash;<li class="selected" data-date="16/01/2014">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<h2>Horizontal Timeline</h2>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<em>January 16th, 2014</em>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
+                        <!--&lt;!&ndash;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur&ndash;&gt;-->
+                        <!--&lt;!&ndash;at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum&ndash;&gt;-->
+                        <!--&lt;!&ndash;ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.&ndash;&gt;-->
+                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                <!--&lt;!&ndash;</li>&ndash;&gt;-->
+
+                <!--&lt;!&ndash;<li data-date="28/02/2014">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<h2>Event title here</h2>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<em>February 28th, 2014</em>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
+                        <!--&lt;!&ndash;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur&ndash;&gt;-->
+                        <!--&lt;!&ndash;at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum&ndash;&gt;-->
+                        <!--&lt;!&ndash;ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.&ndash;&gt;-->
+                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                <!--&lt;!&ndash;</li>&ndash;&gt;-->
+
+                <!--&lt;!&ndash;<li data-date="20/04/2014">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<h2>Event title here</h2>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<em>March 20th, 2014</em>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
+                        <!--&lt;!&ndash;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur&ndash;&gt;-->
+                        <!--&lt;!&ndash;at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum&ndash;&gt;-->
+                        <!--&lt;!&ndash;ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.&ndash;&gt;-->
+                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                <!--&lt;!&ndash;</li>&ndash;&gt;-->
+
+                <!--&lt;!&ndash;<li data-date="20/05/2014">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<h2>Event title here</h2>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<em>May 20th, 2014</em>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
+                        <!--&lt;!&ndash;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur&ndash;&gt;-->
+                        <!--&lt;!&ndash;at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum&ndash;&gt;-->
+                        <!--&lt;!&ndash;ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.&ndash;&gt;-->
+                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                <!--&lt;!&ndash;</li>&ndash;&gt;-->
+
+                <!--&lt;!&ndash;<li data-date="09/07/2014">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<h2>Event title here</h2>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<em>July 9th, 2014</em>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
+                        <!--&lt;!&ndash;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur&ndash;&gt;-->
+                        <!--&lt;!&ndash;at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum&ndash;&gt;-->
+                        <!--&lt;!&ndash;ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.&ndash;&gt;-->
+                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                <!--&lt;!&ndash;</li>&ndash;&gt;-->
+
+                <!--&lt;!&ndash;<li data-date="30/08/2014">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<h2>Event title here</h2>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<em>August 30th, 2014</em>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
+                        <!--&lt;!&ndash;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur&ndash;&gt;-->
+                        <!--&lt;!&ndash;at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum&ndash;&gt;-->
+                        <!--&lt;!&ndash;ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.&ndash;&gt;-->
+                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                <!--&lt;!&ndash;</li>&ndash;&gt;-->
+
+                <!--&lt;!&ndash;<li data-date="15/09/2014">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<h2>Event title here</h2>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<em>September 15th, 2014</em>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
+                        <!--&lt;!&ndash;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur&ndash;&gt;-->
+                        <!--&lt;!&ndash;at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum&ndash;&gt;-->
+                        <!--&lt;!&ndash;ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.&ndash;&gt;-->
+                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                <!--&lt;!&ndash;</li>&ndash;&gt;-->
+
+                <!--&lt;!&ndash;<li data-date="01/11/2014">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<h2>Event title here</h2>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<em>November 1st, 2014</em>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
+                        <!--&lt;!&ndash;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur&ndash;&gt;-->
+                        <!--&lt;!&ndash;at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum&ndash;&gt;-->
+                        <!--&lt;!&ndash;ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.&ndash;&gt;-->
+                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                <!--&lt;!&ndash;</li>&ndash;&gt;-->
+
+                <!--&lt;!&ndash;<li data-date="10/12/2014">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<h2>Event title here</h2>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<em>December 10th, 2014</em>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
+                        <!--&lt;!&ndash;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur&ndash;&gt;-->
+                        <!--&lt;!&ndash;at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum&ndash;&gt;-->
+                        <!--&lt;!&ndash;ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.&ndash;&gt;-->
+                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                <!--&lt;!&ndash;</li>&ndash;&gt;-->
+
+                <!--&lt;!&ndash;<li data-date="19/01/2015">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<h2>Event title here</h2>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<em>January 19th, 2015</em>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
+                        <!--&lt;!&ndash;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur&ndash;&gt;-->
+                        <!--&lt;!&ndash;at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum&ndash;&gt;-->
+                        <!--&lt;!&ndash;ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.&ndash;&gt;-->
+                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                <!--&lt;!&ndash;</li>&ndash;&gt;-->
+
+                <!--&lt;!&ndash;<li data-date="03/03/2015">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<h2>Event title here</h2>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<em>March 3rd, 2015</em>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
+                        <!--&lt;!&ndash;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur&ndash;&gt;-->
+                        <!--&lt;!&ndash;at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum&ndash;&gt;-->
+                        <!--&lt;!&ndash;ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.&ndash;&gt;-->
+                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                <!--&lt;!&ndash;</li>&ndash;&gt;-->
+            <!--&lt;!&ndash;</ol>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</section>&ndash;&gt;-->
+
+<!--</h:body>-->
+<!--</html>-->
