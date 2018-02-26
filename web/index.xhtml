@@ -18,29 +18,52 @@
     <h:panelGroup class="timeline-wrapper clearfix" layout="block">
 
         <h:panelGroup class="timeline-content-day" layout="block">
+
+            <!-- Spotify -->
+
             <h:panelGroup class="timeline-line" layout="block"></h:panelGroup>
             <h:panelGroup class="timeline-content-item active" layout="block">
-                <span>8 AM</span>
+                <span>2003</span>
                 <h:panelGroup class="timeline-content-item-reveal" layout="block">
                     <h:link class="link" outcome = "#">
-                        <h:commandButton id="spotify" image="http://lorempixel.com/300/300/abstract" class="bild" onclick="#{backingBean.companyName}">
+                        <h:commandButton id="skype" image="resources/img/skype.jpg" class="bild" onclick="#{backingBean.companyName}">
 
                         </h:commandButton>
                         <h:panelGroup>
-                            <h:outputText value="#{backingBean.companyName}"/>
+                            <h:outputText value="Skype"/>
                         </h:panelGroup>
                     </h:link>
                 </h:panelGroup>
             </h:panelGroup>
 
-            <!-- New event -->
+            <!-- Skype -->
 
             <h:panelGroup class="timeline-content-item" layout="block">
-                <span>8 AM</span>
+                <span>2005</span>
                 <h:panelGroup class="timeline-content-item-reveal" layout="block">
                     <h:link class="link" outcome = "#">
-                        <h:graphicImage class="bild" value="http://lorempixel.com/300/300/city"/>
-                        <h:panelGroup>Lorem Ipsum</h:panelGroup>
+                        <h:commandButton id="klarna" image="resources/img/klarna.jpg" class="bild" onclick="#{backingBean.companyName}">
+
+                        </h:commandButton>
+                        <h:panelGroup>
+                            <h:outputText value="Klarna"/>
+                        </h:panelGroup>
+                    </h:link>
+                </h:panelGroup>
+            </h:panelGroup>
+
+            <!-- Klarna -->
+
+            <h:panelGroup class="timeline-content-item" layout="block">
+                <span>2008</span>
+                <h:panelGroup class="timeline-content-item-reveal" layout="block">
+                    <h:link class="link" outcome = "#">
+                        <h:commandButton id="spotify" image="resources/img/spotify.jpg" class="bild" onclick="#{backingBean.companyName}">
+
+                        </h:commandButton>
+                        <h:panelGroup>
+                            <h:outputText value="Spotify"/>
+                        </h:panelGroup>
                     </h:link>
                 </h:panelGroup>
             </h:panelGroup>
