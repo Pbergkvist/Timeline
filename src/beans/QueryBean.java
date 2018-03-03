@@ -12,7 +12,7 @@ public class QueryBean {
     @PersistenceContext(name = "TimelinePU")
     EntityManager em;
 
-    public List<CompanyEntity> getCompany() {
+    public List<CompanyEntity> getQueryCompany() {
         TypedQuery<CompanyEntity> theQuery =
         em.createQuery("select c from CompanyEntity c", CompanyEntity.class);
 

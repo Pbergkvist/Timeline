@@ -15,13 +15,7 @@ public class BackingBean implements Serializable {
 
     private QueryBean theQuery;
     private String companyName;
-    private EventEntity resultEE;
-    private List<String> eventlist = new ArrayList<>(Arrays.asList(
-            "Spotify",
-            "Klarna",
-            "IKEA",
-            "Visma"
-    ));
+    private CompanyEntity resultCE;
 
     public QueryBean getTheQuery() {
         return theQuery;
@@ -31,24 +25,6 @@ public class BackingBean implements Serializable {
         this.theQuery = theQuery;
     }
 
-    public String getEventlist() {
-        StringBuilder result = new StringBuilder();
-
-        for (String s: eventlist){
-            result.append(s + " ");
-        }
-
-        return result.toString();
-    }
-
-    public List<CompanyEntity> showCompany() {
-        return theQuery.getCompany();
-    }
-
-    public void setEventlist(List<String> eventlist) {
-        this.eventlist = eventlist;
-    }
-
     public String getCompanyName() {
         return companyName;
     }
@@ -56,4 +32,56 @@ public class BackingBean implements Serializable {
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
     }
+
+    public CompanyEntity getResultCE() {
+        return resultCE;
+    }
+
+    public void setResultCE(CompanyEntity resultCE) {
+        this.resultCE = resultCE;
+    }
+
+    //
+//    public QueryBean getTheQuery() {
+//        return theQuery;
+//    }
+//
+//    public void setTheQuery(QueryBean theQuery) {
+//        this.theQuery = theQuery;
+//    }
+//
+//    public CompanyEntity getResultCE() {
+//        return resultCE;
+//    }
+//
+//    public void setResultCE(CompanyEntity resultCE) {
+//        this.resultCE = resultCE;
+//    }
+//
+//    public String getEventlist() {
+//        StringBuilder result = new StringBuilder();
+//
+//        for (String s: eventlist){
+//            result.append(s + " ");
+//        }
+//
+//
+//        return result.toString();
+//    }
+//
+//    public List<CompanyEntity> search() {
+//        return theQuery.getQueryCompany();
+//    }
+//
+//    public void setEventlist(List<String> eventlist) {
+//        this.eventlist = eventlist;
+//    }
+//
+//    public String getCompanyName() {
+//        return companyName;
+//    }
+//
+//    public void setCompanyName(String companyName) {
+//        this.companyName = companyName;
+//    }
 }
