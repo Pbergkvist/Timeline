@@ -9,37 +9,55 @@
 <!-- Template taken from https://codepen.io/jen-huang/pen/LENZGX -->
 
 <h:head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"/>
     <h:outputScript library="js" name="jquery.js"/>
     <h:outputStylesheet library="css" name="style.css"/>
 </h:head>
 
 <h:body>
 
-    <ui:repeat value="#{backingBean.companylist}" var="company">
 
-        <h:panelGroup class="event" layout="block">
-
-            <h:outputText value="#{company.cname}"/>
-            <h:outputText value="#{company.id}"/>
-            <h:outputText value="#{company.type}"/>
-        </h:panelGroup>
-        <br/>
-    </ui:repeat>
-
-
-    <ui:repeat value="#{backingBean.founderlist}" var="founder">
-        <h:panelGroup class="event" layout="block">
-
-            <h:outputText value="#{founder.fname}" />
-            <h:outputText value="#{founder.yearofbirth}"/>
-
-        </h:panelGroup>
-        <br/>
-    </ui:repeat>
+    <div class="timeline">
+        <ui:repeat value="#{backingBean.event}" var="event">
+            <div class="container left">
+                <div class="content">
+                    <h:outputText value="#{event.year}" class="header"/>
+                    <br/>
+                    <h:outputText value="#{event.headline}" class="header"/>
+                    <br/>
+                    <h:outputText value="#{event.description}" class="header"/>
+                </div>
+            </div>
+        </ui:repeat>
+    </div>
 
 
-    <h:outputScript library="js" name="index.js"/>
+    <!--<div class="timeline">-->
+    <!--<ol>-->
+    <!--<ui:repeat value="#{backingBean.event}" var="event">-->
+    <!--<li>-->
+    <!--<div>-->
+    <!--<h:outputText value="#{event.year}" class="header"/>-->
+    <!--<br/>-->
+    <!--<h:outputText value="#{event.headline}" class="header"/>-->
+    <!--<br/>-->
+    <!--<h:outputText value="#{event.description}" class="header"/>-->
+    <!--</div>-->
+    <!--</li>-->
+    <!--</ui:repeat>-->
+    <!--</ol>-->
+
+    <!--<div class="arrows">-->
+    <!--<button class="arrow arrow__prev disabled" disabled="disabled">-->
+    <!--<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_prev.svg" alt="prev timeline arrow"/>-->
+    <!--</button>-->
+    <!--<button class="arrow arrow__next">-->
+    <!--<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_next.svg" alt="next timeline arrow"/>-->
+    <!--</button>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <h:outputScript value="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"/>
+    <h:outputScript library="js" name="javascript.js"/>
 
 </h:body>
 

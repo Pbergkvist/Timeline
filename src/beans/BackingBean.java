@@ -11,32 +11,7 @@ import java.util.List;
 public class BackingBean implements Serializable {
     @EJB
     private QueryBean theQuery;
-    private CompanyEntity resultCE;
-    private List<CompanyEntity> companylist;
-    private List<FounderEntity> founderlist;
-
-    public List<FounderEntity> getFounderlist() {
-        return theQuery.getListOfFounders();
-    }
-
-    public void setFounderlist(List<FounderEntity> founderlist) {
-        this.founderlist = founderlist;
-    }
-
-    public List<CompanyEntity> getCompanylist() {
-        return theQuery.getListOfCompanies();
-    }
-
-    public void setCompanylist(List<CompanyEntity> companylist) {
-        this.companylist = companylist;
-    }
-    public CompanyEntity getResultCE() {
-        return resultCE;
-    }
-
-    public void setResultCE(CompanyEntity resultCE) {
-        this.resultCE = resultCE;
-    }
+    private List<EventEntity> event;
 
     public QueryBean getTheQuery() {
         return theQuery;
@@ -46,7 +21,11 @@ public class BackingBean implements Serializable {
         this.theQuery = theQuery;
     }
 
-//    public List<CompanyEntity> hello() {
-//        return theQuery.getListOfCompanies();
-//    }
+    public List<EventEntity> getEvent() {
+        return theQuery.getListOfEvents();
+    }
+
+    public void setEvent(List<EventEntity> event) {
+        this.event = event;
+    }
 }

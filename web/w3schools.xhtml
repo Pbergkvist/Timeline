@@ -10,27 +10,18 @@
     <h:outputStylesheet library="css" name="style.css"/>
 </h:head>
 
-<!--<ui:repeat value="#{backingBean.companylist}" var="company">-->
-<!--<h:panelGroup class="timeline" layout="block">-->
-    <!--<h:panelGroup class="container left" layout="block">-->
-        <!--<h:panelGroup class="content">-->
-            <!--<h:outputText value="#{company.cname}"/>-->
-            <!--<h:outputText value="#{company.id}"/>-->
-            <!--<h:outputText value="Lorem ipsum dolor sit amet"/>-->
-        <!--</h:panelGroup>-->
-    <!--</h:panelGroup>-->
-<!--</h:panelGroup>-->
-<!--</ui:repeat>-->
-
-<ui:repeat value="#{backingBean.companylist}" var="company">
-<div class="timeline">
-<div class="container left">
-    <div class="content">
-        <h:outputText value="#{company.cname}" class="header"/>
-        <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+<ui:repeat value="#{backingBean.event}" var="event">
+    <div class="timeline">
+        <div class="container left">
+            <div class="content">
+                <h:outputText value="#{event.year}" class="header"/>
+                <br/>
+                <h:outputText value="#{event.headline}" class="header"/>
+                <br/>
+                <h:outputText value="#{event.description}" class="header"/>
+            </div>
+        </div>
     </div>
-</div>
-</div>
 </ui:repeat>
 
 </html>
