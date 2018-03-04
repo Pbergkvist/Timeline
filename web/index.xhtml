@@ -11,73 +11,33 @@
 <h:head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"/>
     <h:outputScript library="js" name="jquery.js"/>
-    <h:outputStylesheet library="css" name="thestyle.css"/>
+    <h:outputStylesheet library="css" name="style.css"/>
 </h:head>
 
 <h:body>
 
-    <!--<h:form>-->
-    <!--<h:panelGroup class="timeline-wrapper clearfix" layout="block">-->
+    <ui:repeat value="#{backingBean.companylist}" var="company">
 
-        <!--<h:panelGroup class="timeline-content-day" layout="block">-->
+        <h:panelGroup class="event" layout="block">
 
-            <!--&lt;!&ndash; Spotify &ndash;&gt;-->
-            <!--<h:panelGroup class="timeline-line" layout="block"></h:panelGroup>-->
-            <!--<h:panelGroup class="timeline-content-item active" layout="block">-->
-                <!--<span>2003</span>-->
-                <!--<h:panelGroup class="timeline-content-item-reveal" layout="block">-->
-                    <!--<h:link class="link" outcome = "#">-->
-                        <!--<h:commandButton id="skype" image="resources/img/skype.jpg" class="bild" onclick="#{backingBean.companyName}">-->
+            <h:outputText value="#{company.cname}"/>
+            <h:outputText value="#{company.id}"/>
+            <h:outputText value="#{company.type}"/>
+        </h:panelGroup>
+        <br/>
+    </ui:repeat>
 
-                        <!--</h:commandButton>-->
-                        <!--<h:panelGroup>-->
-                            <!--<h:outputText value="Skype"/>-->
-                        <!--</h:panelGroup>-->
-                    <!--</h:link>-->
-                <!--</h:panelGroup>-->
-            <!--</h:panelGroup>-->
 
-            <!--&lt;!&ndash; Klarna &ndash;&gt;-->
+    <ui:repeat value="#{backingBean.founderlist}" var="founder">
+        <h:panelGroup class="event" layout="block">
 
-            <!--<h:panelGroup class="timeline-content-item" layout="block">-->
-                <!--<span>2005</span>-->
-                <!--<h:panelGroup class="timeline-content-item-reveal" layout="block">-->
-                    <!--<h:link class="link" outcome = "#">-->
-                        <!--<h:commandButton id="klarna" image="resources/img/klarna.jpg" class="bild" onclick="#{backingBean.companyName}">-->
+            <h:outputText value="#{founder.fname}" />
+            <h:outputText value="#{founder.yearofbirth}"/>
 
-                        <!--</h:commandButton>-->
-                        <!--<h:panelGroup>-->
-                            <!--<h:outputText value="Klarna"/>-->
-                        <!--</h:panelGroup>-->
-                    <!--</h:link>-->
-                <!--</h:panelGroup>-->
-            <!--</h:panelGroup>-->
+        </h:panelGroup>
+        <br/>
+    </ui:repeat>
 
-            <!--&lt;!&ndash; Spotify &ndash;&gt;-->
-
-            <!--<h:panelGroup class="timeline-content-item" layout="block">-->
-                <!--<span>2008</span>-->
-                <!--<h:panelGroup class="timeline-content-item-reveal" layout="block">-->
-                    <!--<h:link class="link" outcome = "#">-->
-                        <!--<h:commandButton id="spotify" image="resources/img/spotify.jpg" class="bild" onclick="#{backingBean.companyName}">-->
-
-                        <!--</h:commandButton>-->
-                        <!--<h:panelGroup>-->
-                            <!--<h:outputText value="Spotify"/>-->
-                        <!--</h:panelGroup>-->
-                    <!--</h:link>-->
-                <!--</h:panelGroup>-->
-            <!--</h:panelGroup>-->
-
-        <!--</h:panelGroup>-->
-    <!--</h:panelGroup>-->
-    <!--</h:form>-->
-    
-    <h:panelGroup class="event">
-        <!--<ui:repeat value="#{backingBean.getListCompanyEntity}" var="company">-->
-            <h:outputText value="hej"/>
-        <!--</ui:repeat>-->
-    </h:panelGroup>
 
     <h:outputScript library="js" name="index.js"/>
 

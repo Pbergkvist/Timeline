@@ -4,18 +4,39 @@ import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Named
 @SessionScoped
 public class BackingBean implements Serializable {
     @EJB
-
     private QueryBean theQuery;
-    private String companyName;
     private CompanyEntity resultCE;
+    private List<CompanyEntity> companylist;
+    private List<FounderEntity> founderlist;
+
+    public List<FounderEntity> getFounderlist() {
+        return theQuery.getListOfFounders();
+    }
+
+    public void setFounderlist(List<FounderEntity> founderlist) {
+        this.founderlist = founderlist;
+    }
+
+    public List<CompanyEntity> getCompanylist() {
+        return theQuery.getListOfCompanies();
+    }
+
+    public void setCompanylist(List<CompanyEntity> companylist) {
+        this.companylist = companylist;
+    }
+    public CompanyEntity getResultCE() {
+        return resultCE;
+    }
+
+    public void setResultCE(CompanyEntity resultCE) {
+        this.resultCE = resultCE;
+    }
 
     public QueryBean getTheQuery() {
         return theQuery;
@@ -25,63 +46,7 @@ public class BackingBean implements Serializable {
         this.theQuery = theQuery;
     }
 
-    public String getCompanyName() {
-        return companyName;
-    }
-
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
-    }
-
-    public CompanyEntity getResultCE() {
-        return resultCE;
-    }
-
-    public void setResultCE(CompanyEntity resultCE) {
-        this.resultCE = resultCE;
-    }
-
-    //
-//    public QueryBean getTheQuery() {
-//        return theQuery;
-//    }
-//
-//    public void setTheQuery(QueryBean theQuery) {
-//        this.theQuery = theQuery;
-//    }
-//
-//    public CompanyEntity getResultCE() {
-//        return resultCE;
-//    }
-//
-//    public void setResultCE(CompanyEntity resultCE) {
-//        this.resultCE = resultCE;
-//    }
-//
-//    public String getEventlist() {
-//        StringBuilder result = new StringBuilder();
-//
-//        for (String s: eventlist){
-//            result.append(s + " ");
-//        }
-//
-//
-//        return result.toString();
-//    }
-//
-//    public List<CompanyEntity> search() {
-//        return theQuery.getQueryCompany();
-//    }
-//
-//    public void setEventlist(List<String> eventlist) {
-//        this.eventlist = eventlist;
-//    }
-//
-//    public String getCompanyName() {
-//        return companyName;
-//    }
-//
-//    public void setCompanyName(String companyName) {
-//        this.companyName = companyName;
+//    public List<CompanyEntity> hello() {
+//        return theQuery.getListOfCompanies();
 //    }
 }

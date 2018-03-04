@@ -1,41 +1,25 @@
 package beans;
-
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.util.List;
-
 @Stateless
-
 public class QueryBean {
-    @PersistenceContext(name = "TimelinePU")
+    @PersistenceContext(name="TimelinePU")
     EntityManager em;
 
-    public List<CompanyEntity> getQueryCompany() {
+    public List<CompanyEntity> getListOfCompanies() {
         TypedQuery<CompanyEntity> theQuery =
-        em.createQuery("select c from CompanyEntity c", CompanyEntity.class);
-
+                em.createQuery("select c.cname, c.id, e.date" + " from CompanyEntity c, EventEntity e where c.eventDate = e.date", CompanyEntity.class);
         List<CompanyEntity> result = theQuery.getResultList();
         return result;
     }
 
-//    public List<UsersEntity> getListOfUsers() {
-//        TypedQuery<UsersEntity> theQuery =
-//                em.createQuery("select c from UsersEntity c", UsersEntity.class);
-//
-//
-//        List<UsersEntity> result = theQuery.getResultList();
-//        return result;
-//    }
-//
-//    public UsersEntity getUsers(String name, String password) {
-//        UsersEntity search = new UsersEntity();
-//        search = (UsersEntity)
-//                em.createQuery("select c from UsersEntity c where c.name=:Name AND c.password=:Password")
-//                        .setParameter("Name", name)
-//                        .setParameter("Password", password)
-//                        .getSingleResult();
-//        return search;
-//    }
+    public List<FounderEntity> getListOfFounders() {
+        TypedQuery<FounderEntity> theQuery =
+                em.createQuery("select c from FounderEntity c", FounderEntity.class);
+        List<FounderEntity> result = theQuery.getResultList();
+        return result;
+    }
 }
