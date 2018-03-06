@@ -15,23 +15,44 @@
 
 <h:body>
 
+    <!--<ui:composition template="resources/templates/template.xhtml">-->
+        <!--<ui:define name="content">-->
+            <!--<div class="timeline">-->
+                <!--<ui:repeat value="#{backingBean.event}" var="event">-->
+                    <!--<div class="container left">-->
+                        <!--<div class="content">-->
+                            <!--<h:outputText value="#{event.year}" class="header"/>-->
+                            <!--<br/>-->
+                            <!--<h:outputText value="#{event.headline}" class="header"/>-->
+                            <!--<br/>-->
+                            <!--<h:outputText value="#{event.description}" class="header"/>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</ui:repeat>-->
+            <!--</div>-->
+        <!--</ui:define>-->
+    <!--</ui:composition>-->
+
     <ui:composition template="resources/templates/template.xhtml">
         <ui:define name="content">
-    <div class="timeline">
-        <ui:repeat value="#{backingBean.event}" var="event">
-            <div class="container left">
-                <div class="content">
+            <div class="bar"></div>
+            <div class="timeline">
+                <ui:repeat value="#{backingBean.event}" var="event">
+                <div class="entry">
+                    <div class="content">
                     <h:outputText value="#{event.year}" class="header"/>
                     <br/>
                     <h:outputText value="#{event.headline}" class="header"/>
                     <br/>
                     <h:outputText value="#{event.description}" class="header"/>
+                    </div>
                 </div>
+                </ui:repeat>
             </div>
-        </ui:repeat>
-    </div>
         </ui:define>
     </ui:composition>
+
+
     <!--<div class="timeline">-->
     <!--<ol>-->
     <!--<ui:repeat value="#{backingBean.event}" var="event">-->
@@ -46,6 +67,7 @@
     <!--</li>-->
     <!--</ui:repeat>-->
     <!--</ol>-->
+    <!--</div>-->
 
     <!--<div class="arrows">-->
     <!--<button class="arrow arrow__prev disabled" disabled="disabled">-->
