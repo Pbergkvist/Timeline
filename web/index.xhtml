@@ -15,7 +15,8 @@
 
 <h:body>
 
-
+    <ui:composition template="resources/templates/template.xhtml">
+        <ui:define name="content">
     <div class="timeline">
         <ui:repeat value="#{backingBean.event}" var="event">
             <div class="container left">
@@ -29,8 +30,8 @@
             </div>
         </ui:repeat>
     </div>
-
-
+        </ui:define>
+    </ui:composition>
     <!--<div class="timeline">-->
     <!--<ol>-->
     <!--<ui:repeat value="#{backingBean.event}" var="event">-->
