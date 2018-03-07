@@ -7,7 +7,6 @@ import java.util.Arrays;
 @Table(name = "event", schema = "timeline", catalog = "")
 public class EventEntity {
     private String headline;
-    private int id;
     private Integer year;
     private byte[] picture;
     private String description;
@@ -23,16 +22,6 @@ public class EventEntity {
     }
 
     @Id
-    @Column(name = "id")
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    @Basic
     @Column(name = "year")
     public Integer getYear() {
         return year;
@@ -69,7 +58,6 @@ public class EventEntity {
 
         EventEntity that = (EventEntity) o;
 
-        if (id != that.id) return false;
         if (headline != null ? !headline.equals(that.headline) : that.headline != null) return false;
         if (year != null ? !year.equals(that.year) : that.year != null) return false;
         if (!Arrays.equals(picture, that.picture)) return false;
@@ -81,7 +69,6 @@ public class EventEntity {
     @Override
     public int hashCode() {
         int result = headline != null ? headline.hashCode() : 0;
-        result = 31 * result + id;
         result = 31 * result + (year != null ? year.hashCode() : 0);
         result = 31 * result + Arrays.hashCode(picture);
         result = 31 * result + (description != null ? description.hashCode() : 0);

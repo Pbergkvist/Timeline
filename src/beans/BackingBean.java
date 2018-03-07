@@ -15,23 +15,98 @@ public class BackingBean implements Serializable {
     private String userName;
     private String password;
     private LoginEntity resultLE;
-    private boolean hide;
+    private boolean visible;
 
-    public boolean isHide() {
-        return hide;
+    // Event
+    private int year;
+    private String headline;
+    private String description;
+
+    private int newYear;
+
+    public int getNewYear() {
+        return newYear;
     }
 
-    public void setHide(boolean hide) {
-        this.hide = hide;
+    public void setNewYear(int newYear) {
+        this.newYear = newYear;
     }
 
-    public void hideOrShow() {
+    // update meny
+    private List<EventEntity> theYears;
 
-        if (!hide) {
-            hide = true;
-        } else {
-            hide = false;
-        }
+    public List<EventEntity> getTheYears() {
+        return theQuery.getListOfYears();
+    }
+
+    public void setTheYears(List<EventEntity> theYears) {
+        this.theYears = theYears;
+    }
+
+    private int selectedyear;
+
+    public int getSelectedyear() {
+        return selectedyear;
+    }
+
+    public void setSelectedyear(int selectedyear) {
+        this.selectedyear = selectedyear;
+    }
+
+    public void addEvent() {
+        theQuery.addEvent(year, headline, description);
+        visible = false;
+    }
+
+    public void deleteEvent() {
+        theQuery.deleteEvent(selectedyear);
+        visible = false;
+    }
+
+    public void updateEvent() {
+        theQuery.updateEvent(selectedyear, newYear, headline, description);
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public String getHeadline() {
+        return headline;
+    }
+
+    public void setHeadline(String headline) {
+        this.headline = headline;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    //
+
+    public void show(){
+        visible=true;
+    }
+
+    public void hide(){
+        visible=false;
+    }
+
+    public boolean isVisible() {
+        return visible;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
     }
 
     public LoginEntity getResultLE() {

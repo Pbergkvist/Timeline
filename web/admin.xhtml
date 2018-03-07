@@ -13,19 +13,65 @@
 
 <h:body>
 
-    <h:form>
-    <div class="center">
-        <p:commandButton value="Lägg till">
-            <f:ajax listener="#{backingBean.hideOrShow}" event="click" render="show"></f:ajax>
-        </p:commandButton>
-        <p:commandButton value="Ta bort"/>
-        <p:commandButton value="Uppdatera"/>
-    </div>
-    </h:form>
 
-    <h:panelGroup layout="block" rendered="#{backingBean.hide}" id="show">
-    <h:inputText/>
-    </h:panelGroup>
+    <div class="center">
+        <h:form>
+            <div class="inline">
+                <p:commandButton value="Lägg till" action="#{backingBean.show()}">
+                    <f:ajax execute="@form" render="@form"/>
+                </p:commandButton>
+                <h:panelGroup layout="block" rendered="#{backingBean.visible}">
+                    <br/><br/>
+                    <h:outputText value="År" rendered="#{backingBean.visible}"/>
+                    <h:inputText rendered="#{backingBean.visible}" value="#{backingBean.year}"/>
+                    <br/><br/>
+                    <h:outputText value="Rubrik" rendered="#{backingBean.visible}"/>
+                    <h:inputText rendered="#{backingBean.visible}" value="#{backingBean.headline}"/>
+                    <br/><br/>
+                    <h:outputText value="Beskrivning" rendered="#{backingBean.visible}"/>
+                    <h:inputText rendered="#{backingBean.visible}" value="#{backingBean.description}"/>
+                    <br/><br/>
+                    <p:commandButton value="Skicka" action="#{backingBean.addEvent}" rendered="#{backingBean.visible}"/>
+                </h:panelGroup>
+            </div>
+        </h:form>
+        <h:form>
+            <div class="inline">
+                <p:commandButton value="Ta bort" action="#{backingBean.show()}">
+                    <f:ajax execute="@form" render="@form"/>
+                </p:commandButton>
+                <h:panelGroup layout="block" rendered="#{backingBean.visible}">
+                    <p:selectOneMenu id="menu" value="#{backingBean.selectedyear}">
+                        <f:selectItems value="#{backingBean.theYears}" var="years" itemvalue="#{years.year}"/>
+                    </p:selectOneMenu>
+                    <p:commandButton value="Skicka" action="#{backingBean.deleteEvent}" rendered="#{backingBean.visible}"/>
+                </h:panelGroup>
+            </div>
+        </h:form>
+        <h:form>
+            <div class="inline">
+                <p:commandButton value="Uppdatera" action="#{backingBean.show()}">
+                    <f:ajax execute="@form" render="@form"/>
+                </p:commandButton>
+                <h:panelGroup layout="block" rendered="#{backingBean.visible}">
+                    <p:selectOneMenu id="menu2" value="#{backingBean.selectedyear}">
+                        <f:selectItems value="#{backingBean.theYears}" var="years" itemvalue="#{years.year}"/>
+                    </p:selectOneMenu>
+                    <br/><br/>
+                    <h:outputText value="År" rendered="#{backingBean.visible}"/>
+                    <h:inputText rendered="#{backingBean.visible}" value="#{backingBean.newYear}"/>
+                    <br/><br/>
+                    <h:outputText value="Rubrik" rendered="#{backingBean.visible}"/>
+                    <h:inputText rendered="#{backingBean.visible}" value="#{backingBean.headline}"/>
+                    <br/><br/>
+                    <h:outputText value="Beskrivning" rendered="#{backingBean.visible}"/>
+                    <h:inputText rendered="#{backingBean.visible}" value="#{backingBean.description}"/>
+                    <br/><br/>
+                    <p:commandButton value="Skicka" action="#{backingBean.updateEvent()}" rendered="#{backingBean.visible}"/>
+                </h:panelGroup>
+            </div>
+        </h:form>
+    </div>
 
 
 </h:body>

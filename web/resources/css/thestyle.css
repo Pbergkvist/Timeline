@@ -2,6 +2,10 @@ body {
     font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
 }
 
+.inline {
+    /*display: inline-block;*/
+}
+
 .center {
     position: fixed;
     top: 50%;
