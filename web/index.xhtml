@@ -8,8 +8,9 @@
       xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-    <h:outputScript library="js" name="jquery.js"/>
     <h:outputStylesheet library="css" name="style.css"/>
+    <h:outputScript library="js" name="jquery.js"/>
+    <h:outputScript library="js" name="main.js"/>
 </h:head>
 
 <h:body>
@@ -21,18 +22,18 @@
                 <ui:repeat value="#{backingBean.event}" var="event">
                     <div class="entry">
                         <div class="content">
-                            <h:outputText value="#{event.year}" class="header"/>
-                            <br/>
-                            <h:outputText value="#{event.headline}" class="header"/>
-                            <br/>
-                            <h:outputText value="#{event.description}" class="header"/>
+                            <h:outputText value="#{event.year}" class="year"/>
+                            <br/><br/>
+                            <h:outputText value="#{event.headline}" class="headline"/>
+                            <br/><br/>
+                            <h:outputText value="#{event.description}" class="description"/>
                         </div>
                     </div>
                 </ui:repeat>
             </div>
             <br/>
             <h:form>
-                <p:commandButton value="Logga in" action="login"/>
+                <p:commandButton value="Logga in" action="login" styleClass="loginBtn"/>
             </h:form>
         </ui:define>
     </ui:composition>
@@ -81,8 +82,8 @@
     <!--</div>-->
     <!--</div>-->
 
-    <h:outputScript value="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"/>
-    <h:outputScript library="js" name="javascript.js"/>
+    <!--<h:outputScript value="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"/>-->
+    <!--<h:outputScript library="js" name="javascript.js"/>-->
 
 </h:body>
 

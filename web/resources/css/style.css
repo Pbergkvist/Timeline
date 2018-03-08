@@ -1,7 +1,8 @@
 body {
     padding:25px;
-    font-family:sans-serif;
+    font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
 }
+
 .timeline {
     white-space:nowrap;
     overflow-x: scroll;
@@ -13,42 +14,56 @@ body {
     display:inline-block;
     white-space: normal;
     vertical-align:top;
-    background:#13519C;
+    /*background:#13519C;*/
+    background: #2399e5;
     color:#fff;
     padding:10px;
     font-size:12px;
     text-align:center;
     position:relative;
-    border-top:4px solid #06182E;
-    border-radius:3px ;
+    /*border-top:4px solid #06182E;*/
+    border-radius:5px ;
     min-width:200px;
-    max-width: 100px;
+    max-width: 300px;
 }
 
 .entry:after {
     content:'';
     display:block;
-    background:#eee;
+    background:#fff;
     width:7px;
     height:7px;
     border-radius:6px;
-    border:3px solid #06182E;
+    border:3px solid #2399e5;
     position:absolute;
     left:50%;
-    top:-30px;
+    top:-26px;
     margin-left:-6px;
 }
 
 .entry:before {
     content:'';
     display:block;
-    background:#06182E;
-    width:5px;
+    background:#2399e5;
+    width:4px;
     height:20px;
     position:absolute;
     left:50%;
-    top:-20px;
+    top:-16px;
     margin-left:-2px;
+}
+
+.year {
+    font-size: 2em;
+}
+
+.headline {
+    font-size: 1.6em;
+    text-decoration: underline;
+}
+
+.description {
+    font-size: 1.5em;
 }
 
 .entry h1 {

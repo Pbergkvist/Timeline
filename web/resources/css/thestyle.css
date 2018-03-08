@@ -2,10 +2,6 @@ body {
     font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
 }
 
-.inline {
-    /*display: inline-block;*/
-}
-
 .center {
     position: fixed;
     top: 50%;
@@ -24,4 +20,9 @@ body {
 
 .text {
 
+}
+
+.flex {
+    display: flex;
+    align-items: center;
 }
